@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.8.2 on win32)" generated="20210920 19:31:51.156" rpa="false" schemaversion="2">
+<suite id="s1" name="CheckPhoneNumber" source="C:\Users\dvive\Desktop\Robot\CheckPhoneNumber\CheckPhoneNumber.robot">
+<test id="s1-t1" name="Check Phone Number - P1">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>p1session</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210920 19:31:51.361" level="INFO">Creating Session using : alias=p1session, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210920 19:31:51.359" endtime="20210920 19:31:51.361"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>phone=027071588</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210920 19:31:51.362" level="INFO">${body} = {'phone': '027071588'}</msg>
+<status status="PASS" starttime="20210920 19:31:51.362" endtime="20210920 19:31:51.362"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210920 19:31:51.364" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210920 19:31:51.363" endtime="20210920 19:31:51.364"/>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>p1session</arg>
+<arg>/v1/phone/check</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20210920 19:31:51.384" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
+ path_url=/customer/v1/phone/check 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '22'} 
+ body=b'{"phone": "027071588"}' 
+ </msg>
+<msg timestamp="20210920 19:31:51.384" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Mon, 20 Sep 2021 12:31:51 GMT', 'Transfer-Encoding': 'chunked'} 
+ body={
+    "type": "home phone"
+} 
+ </msg>
+<msg timestamp="20210920 19:31:51.384" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 19:31:51.364" endtime="20210920 19:31:51.384"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210920 19:31:51.385" endtime="20210920 19:31:51.386"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210920 19:31:51.387" endtime="20210920 19:31:51.387"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210920 19:31:51.388" level="INFO">${res_body} = {
+    "type": "home phone"
+}</msg>
+<status status="PASS" starttime="20210920 19:31:51.388" endtime="20210920 19:31:51.388"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>home phone</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210920 19:31:51.389" endtime="20210920 19:31:51.389"/>
+</kw>
+<status status="PASS" starttime="20210920 19:31:51.359" endtime="20210920 19:31:51.389"/>
+</test>
+<test id="s1-t2" name="Check Phone Number - P2">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210920 19:31:51.391" level="INFO">Creating Session using : alias=mysession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210920 19:31:51.391" endtime="20210920 19:31:51.392"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>phone=0648763436</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210920 19:31:51.392" level="INFO">${body} = {'phone': '0648763436'}</msg>
+<status status="PASS" starttime="20210920 19:31:51.392" endtime="20210920 19:31:51.392"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210920 19:31:51.393" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210920 19:31:51.393" endtime="20210920 19:31:51.393"/>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/v1/phone/check</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20210920 19:31:51.401" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
+ path_url=/customer/v1/phone/check 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '23'} 
+ body=b'{"phone": "0648763436"}' 
+ </msg>
+<msg timestamp="20210920 19:31:51.401" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Mon, 20 Sep 2021 12:31:51 GMT', 'Transfer-Encoding': 'chunked'} 
+ body={
+    "type": "mobile phone"
+} 
+ </msg>
+<msg timestamp="20210920 19:31:51.401" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 19:31:51.394" endtime="20210920 19:31:51.401"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210920 19:31:51.402" endtime="20210920 19:31:51.403"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210920 19:31:51.403" endtime="20210920 19:31:51.404"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210920 19:31:51.405" level="INFO">${res_body} = {
+    "type": "mobile phone"
+}</msg>
+<status status="PASS" starttime="20210920 19:31:51.404" endtime="20210920 19:31:51.405"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>mobile phone</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210920 19:31:51.406" endtime="20210920 19:31:51.406"/>
+</kw>
+<status status="PASS" starttime="20210920 19:31:51.391" endtime="20210920 19:31:51.406"/>
+</test>
+<status status="PASS" starttime="20210920 19:31:51.158" endtime="20210920 19:31:51.408"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="CheckPhoneNumber">CheckPhoneNumber</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

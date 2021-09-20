@@ -1,0 +1,22 @@
+{
+        "imposters": [
+                {
+                        "port": 6969,
+                        "protocol": "http",
+                        "name": "phone",
+                        "stubs": [
+                                {
+                                        "predicates": [ <% include phone/phone_case_1/p1_predicates.ejs %> ],
+                                        "responses": [ <% include phone/phone_case_1/p1_response.ejs %> ]
+                                },
+                                {
+                                        "predicates": [ <% include phone/phone_case_2/p2_predicates.ejs %> ],
+                                        "responses": [ <% include phone/phone_case_2/p2_response.ejs %> ]
+                                },
+                                {
+                                        "responses": [ <% include proxy.ejs %> ]
+                                }
+                        ]
+                }
+        ]
+}

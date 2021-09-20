@@ -1,0 +1,17 @@
+{
+    "and":[
+       {
+            "equals":{
+                "path":"/customer/v1/phone/check",
+                "method":"POST"
+            }
+       },
+       {
+          "matches":{
+             "body":{
+                "phone":"^[0]{1}[6|8|9]{1}[0-9]{8}"
+             }
+          }
+       }
+    ]
+ }
