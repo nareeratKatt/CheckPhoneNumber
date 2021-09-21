@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.8.2 on win32)" generated="20210921 09:38:44.050" rpa="false" schemaversion="2">
+<suite id="s1" name="CheckPhoneNumber" source="C:\Users\dvive\Desktop\CheckPhoneNumber\robot\testcases\CheckPhoneNumber.robot">
+<test id="s1-t1" name="Check Phone Number - P1">
+<kw name="Check Phone Number" library="keywords">
+<arg>021235469</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>checkPhoneSession</arg>
+<arg>${COMMON.base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210921 09:38:44.170" level="INFO">Creating Session using : alias=checkPhoneSession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210921 09:38:44.169" endtime="20210921 09:38:44.170"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>phone=${phone_number}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210921 09:38:44.171" level="INFO">${body} = {'phone': '021235469'}</msg>
+<status status="PASS" starttime="20210921 09:38:44.170" endtime="20210921 09:38:44.171"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210921 09:38:44.171" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210921 09:38:44.171" endtime="20210921 09:38:44.171"/>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>checkPhoneSession</arg>
+<arg>/v1/phone/check</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20210921 09:38:44.183" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
+ path_url=/customer/v1/phone/check 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '22'} 
+ body=b'{"phone": "021235469"}' 
+ </msg>
+<msg timestamp="20210921 09:38:44.183" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Tue, 21 Sep 2021 02:38:44 GMT', 'Transfer-Encoding': 'chunked'} 
+ body={
+    "type": "home phone"
+} 
+ </msg>
+<msg timestamp="20210921 09:38:44.183" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210921 09:38:44.171" endtime="20210921 09:38:44.183"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210921 09:38:44.183" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 09:38:44.183" endtime="20210921 09:38:44.183"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210921 09:38:44.184" level="INFO">${res_body} = {
+    "type": "home phone"
+}</msg>
+<status status="PASS" starttime="20210921 09:38:44.184" endtime="20210921 09:38:44.184"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20210921 09:38:44.184" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 09:38:44.184" endtime="20210921 09:38:44.185"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${res_body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20210921 09:38:44.185" level="INFO">${res_body} = {
+    "type": "home phone"
+}</msg>
+<status status="PASS" starttime="20210921 09:38:44.185" endtime="20210921 09:38:44.185"/>
+</kw>
+<status status="PASS" starttime="20210921 09:38:44.169" endtime="20210921 09:38:44.185"/>
+</kw>
+<status status="PASS" starttime="20210921 09:38:44.162" endtime="20210921 09:38:44.186"/>
+</test>
+<test id="s1-t2" name="Check Phone Number - P2">
+<kw name="Check Phone Number" library="keywords">
+<arg>0648763436</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>checkPhoneSession</arg>
+<arg>${COMMON.base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210921 09:38:44.189" level="INFO">Creating Session using : alias=checkPhoneSession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210921 09:38:44.188" endtime="20210921 09:38:44.189"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>phone=${phone_number}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210921 09:38:44.189" level="INFO">${body} = {'phone': '0648763436'}</msg>
+<status status="PASS" starttime="20210921 09:38:44.189" endtime="20210921 09:38:44.189"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210921 09:38:44.190" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210921 09:38:44.189" endtime="20210921 09:38:44.190"/>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>checkPhoneSession</arg>
+<arg>/v1/phone/check</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20210921 09:38:44.196" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
+ path_url=/customer/v1/phone/check 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '23'} 
+ body=b'{"phone": "0648763436"}' 
+ </msg>
+<msg timestamp="20210921 09:38:44.196" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Tue, 21 Sep 2021 02:38:44 GMT', 'Transfer-Encoding': 'chunked'} 
+ body={
+    "type": "mobile phone"
+} 
+ </msg>
+<msg timestamp="20210921 09:38:44.196" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210921 09:38:44.190" endtime="20210921 09:38:44.196"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210921 09:38:44.197" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 09:38:44.196" endtime="20210921 09:38:44.197"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210921 09:38:44.197" level="INFO">${res_body} = {
+    "type": "mobile phone"
+}</msg>
+<status status="PASS" starttime="20210921 09:38:44.197" endtime="20210921 09:38:44.198"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20210921 09:38:44.198" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 09:38:44.198" endtime="20210921 09:38:44.198"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${res_body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20210921 09:38:44.198" level="INFO">${res_body} = {
+    "type": "mobile phone"
+}</msg>
+<status status="PASS" starttime="20210921 09:38:44.198" endtime="20210921 09:38:44.198"/>
+</kw>
+<status status="PASS" starttime="20210921 09:38:44.188" endtime="20210921 09:38:44.198"/>
+</kw>
+<status status="PASS" starttime="20210921 09:38:44.187" endtime="20210921 09:38:44.199"/>
+</test>
+<status status="PASS" starttime="20210921 09:38:44.065" endtime="20210921 09:38:44.201"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="CheckPhoneNumber">CheckPhoneNumber</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

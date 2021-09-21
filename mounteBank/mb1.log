@@ -1,4 +1,5 @@
-{"message":"[mb:2525] mountebank v2.5.0 now taking orders - point your browser to http://localhost:2525/ for help","level":"info","timestamp":"2021-09-20T12:30:16.483Z"}
-{"message":"[mb:2525] PUT /imposters","level":"info","timestamp":"2021-09-20T12:30:16.545Z"}
-{"message":"[http:6969 phone] Open for business...","level":"info","timestamp":"2021-09-20T12:30:16.564Z"}
-{"message":"[mb:2525] Adios - see you soon?","level":"info","timestamp":"2021-09-20T12:30:22.303Z"}
+{"message":"[mb:2525] mountebank v2.5.0 now taking orders - point your browser to http://localhost:2525/ for help","level":"info","timestamp":"2021-09-21T05:58:07.537Z"}
+{"message":"[mb:2525] PUT /imposters","level":"info","timestamp":"2021-09-21T05:58:07.598Z"}
+{"message":"[http:6969 phone] Open for business...","level":"info","timestamp":"2021-09-21T05:58:07.617Z"}
+{"message":"[http:6969 phone] ::1:57959 => POST /customer/v1/phone/check","level":"info","timestamp":"2021-09-21T05:58:13.139Z"}
+{"message":"[mb:2525] Adios - see you soon?","level":"info","timestamp":"2021-09-21T05:58:37.086Z"}
