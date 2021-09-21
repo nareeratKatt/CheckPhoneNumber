@@ -10,6 +10,7 @@
 >Case 2 : ทดสอบหมายเลขโทรศัพท์ที่ขึ้นต้นด้วย 06, 08, 09 <br>
 โดยต้องมี Response (success) : mobile phone<br>
 
->Case Other : <br>
-Response : status 404
+>Case Other : ทดสอบหมายเลขโทรศัพท์ที่ไม่ได้ขึ้นต้นด้วยเลข 0 <br>
+โดยต้องมี Response (success) : not match
+
     
