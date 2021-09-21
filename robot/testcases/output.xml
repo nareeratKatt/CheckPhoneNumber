@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.8.2 on win32)" generated="20210921 09:38:44.050" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.1 (Python 3.8.2 on win32)" generated="20210921 13:37:27.717" rpa="false" schemaversion="2">
 <suite id="s1" name="CheckPhoneNumber" source="C:\Users\dvive\Desktop\CheckPhoneNumber\robot\testcases\CheckPhoneNumber.robot">
 <test id="s1-t1" name="Check Phone Number - P1">
 <kw name="Check Phone Number" library="keywords">
@@ -8,22 +8,22 @@
 <arg>checkPhoneSession</arg>
 <arg>${COMMON.base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20210921 09:38:44.170" level="INFO">Creating Session using : alias=checkPhoneSession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210921 09:38:44.169" endtime="20210921 09:38:44.170"/>
+<msg timestamp="20210921 13:37:27.819" level="INFO">Creating Session using : alias=checkPhoneSession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210921 13:37:27.818" endtime="20210921 13:37:27.819"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>phone=${phone_number}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210921 09:38:44.171" level="INFO">${body} = {'phone': '021235469'}</msg>
-<status status="PASS" starttime="20210921 09:38:44.170" endtime="20210921 09:38:44.171"/>
+<msg timestamp="20210921 13:37:27.820" level="INFO">${body} = {'phone': '021235469'}</msg>
+<status status="PASS" starttime="20210921 13:37:27.820" endtime="20210921 13:37:27.820"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210921 09:38:44.171" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20210921 09:38:44.171" endtime="20210921 09:38:44.171"/>
+<msg timestamp="20210921 13:37:27.820" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210921 13:37:27.820" endtime="20210921 13:37:27.820"/>
 </kw>
 <kw name="Post On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -32,54 +32,54 @@
 <arg>json=${body}</arg>
 <arg>headers=${header}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20210921 09:38:44.183" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
+<msg timestamp="20210921 13:37:27.833" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
  path_url=/customer/v1/phone/check 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '22'} 
  body=b'{"phone": "021235469"}' 
  </msg>
-<msg timestamp="20210921 09:38:44.183" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
+<msg timestamp="20210921 13:37:27.833" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
  status=200, reason=OK 
- headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Tue, 21 Sep 2021 02:38:44 GMT', 'Transfer-Encoding': 'chunked'} 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Tue, 21 Sep 2021 06:37:27 GMT', 'Transfer-Encoding': 'chunked'} 
  body={
     "type": "home phone"
 } 
  </msg>
-<msg timestamp="20210921 09:38:44.183" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210921 09:38:44.171" endtime="20210921 09:38:44.183"/>
+<msg timestamp="20210921 13:37:27.834" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210921 13:37:27.820" endtime="20210921 13:37:27.834"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20210921 09:38:44.183" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20210921 09:38:44.183" endtime="20210921 09:38:44.183"/>
+<msg timestamp="20210921 13:37:27.834" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 13:37:27.834" endtime="20210921 13:37:27.834"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_body}</var>
 <arg>${response.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20210921 09:38:44.184" level="INFO">${res_body} = {
+<msg timestamp="20210921 13:37:27.835" level="INFO">${res_body} = {
     "type": "home phone"
 }</msg>
-<status status="PASS" starttime="20210921 09:38:44.184" endtime="20210921 09:38:44.184"/>
+<status status="PASS" starttime="20210921 13:37:27.834" endtime="20210921 13:37:27.835"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210921 09:38:44.184" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20210921 09:38:44.184" endtime="20210921 09:38:44.185"/>
+<msg timestamp="20210921 13:37:27.836" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 13:37:27.835" endtime="20210921 13:37:27.836"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${res_body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210921 09:38:44.185" level="INFO">${res_body} = {
+<msg timestamp="20210921 13:37:27.836" level="INFO">${res_body} = {
     "type": "home phone"
 }</msg>
-<status status="PASS" starttime="20210921 09:38:44.185" endtime="20210921 09:38:44.185"/>
+<status status="PASS" starttime="20210921 13:37:27.836" endtime="20210921 13:37:27.836"/>
 </kw>
-<status status="PASS" starttime="20210921 09:38:44.169" endtime="20210921 09:38:44.185"/>
+<status status="PASS" starttime="20210921 13:37:27.818" endtime="20210921 13:37:27.836"/>
 </kw>
-<status status="PASS" starttime="20210921 09:38:44.162" endtime="20210921 09:38:44.186"/>
+<status status="PASS" starttime="20210921 13:37:27.804" endtime="20210921 13:37:27.836"/>
 </test>
 <test id="s1-t2" name="Check Phone Number - P2">
 <kw name="Check Phone Number" library="keywords">
@@ -88,22 +88,22 @@
 <arg>checkPhoneSession</arg>
 <arg>${COMMON.base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20210921 09:38:44.189" level="INFO">Creating Session using : alias=checkPhoneSession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210921 09:38:44.188" endtime="20210921 09:38:44.189"/>
+<msg timestamp="20210921 13:37:27.839" level="INFO">Creating Session using : alias=checkPhoneSession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210921 13:37:27.839" endtime="20210921 13:37:27.840"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>phone=${phone_number}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210921 09:38:44.189" level="INFO">${body} = {'phone': '0648763436'}</msg>
-<status status="PASS" starttime="20210921 09:38:44.189" endtime="20210921 09:38:44.189"/>
+<msg timestamp="20210921 13:37:27.840" level="INFO">${body} = {'phone': '0648763436'}</msg>
+<status status="PASS" starttime="20210921 13:37:27.840" endtime="20210921 13:37:27.840"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210921 09:38:44.190" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20210921 09:38:44.189" endtime="20210921 09:38:44.190"/>
+<msg timestamp="20210921 13:37:27.841" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210921 13:37:27.840" endtime="20210921 13:37:27.841"/>
 </kw>
 <kw name="Post On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -112,65 +112,145 @@
 <arg>json=${body}</arg>
 <arg>headers=${header}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20210921 09:38:44.196" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
+<msg timestamp="20210921 13:37:27.846" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
  path_url=/customer/v1/phone/check 
  headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '23'} 
  body=b'{"phone": "0648763436"}' 
  </msg>
-<msg timestamp="20210921 09:38:44.196" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
+<msg timestamp="20210921 13:37:27.847" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
  status=200, reason=OK 
- headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Tue, 21 Sep 2021 02:38:44 GMT', 'Transfer-Encoding': 'chunked'} 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Tue, 21 Sep 2021 06:37:27 GMT', 'Transfer-Encoding': 'chunked'} 
  body={
     "type": "mobile phone"
 } 
  </msg>
-<msg timestamp="20210921 09:38:44.196" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210921 09:38:44.190" endtime="20210921 09:38:44.196"/>
+<msg timestamp="20210921 13:37:27.847" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210921 13:37:27.841" endtime="20210921 13:37:27.847"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20210921 09:38:44.197" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20210921 09:38:44.196" endtime="20210921 09:38:44.197"/>
+<msg timestamp="20210921 13:37:27.847" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 13:37:27.847" endtime="20210921 13:37:27.847"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_body}</var>
 <arg>${response.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20210921 09:38:44.197" level="INFO">${res_body} = {
+<msg timestamp="20210921 13:37:27.848" level="INFO">${res_body} = {
     "type": "mobile phone"
 }</msg>
-<status status="PASS" starttime="20210921 09:38:44.197" endtime="20210921 09:38:44.198"/>
+<status status="PASS" starttime="20210921 13:37:27.848" endtime="20210921 13:37:27.848"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210921 09:38:44.198" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20210921 09:38:44.198" endtime="20210921 09:38:44.198"/>
+<msg timestamp="20210921 13:37:27.848" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 13:37:27.848" endtime="20210921 13:37:27.848"/>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <arg>${res_body}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20210921 09:38:44.198" level="INFO">${res_body} = {
+<msg timestamp="20210921 13:37:27.849" level="INFO">${res_body} = {
     "type": "mobile phone"
 }</msg>
-<status status="PASS" starttime="20210921 09:38:44.198" endtime="20210921 09:38:44.198"/>
+<status status="PASS" starttime="20210921 13:37:27.849" endtime="20210921 13:37:27.849"/>
 </kw>
-<status status="PASS" starttime="20210921 09:38:44.188" endtime="20210921 09:38:44.198"/>
+<status status="PASS" starttime="20210921 13:37:27.838" endtime="20210921 13:37:27.849"/>
 </kw>
-<status status="PASS" starttime="20210921 09:38:44.187" endtime="20210921 09:38:44.199"/>
+<status status="PASS" starttime="20210921 13:37:27.838" endtime="20210921 13:37:27.849"/>
 </test>
-<status status="PASS" starttime="20210921 09:38:44.065" endtime="20210921 09:38:44.201"/>
+<test id="s1-t3" name="Check Phone Number - Other">
+<kw name="Check Phone Number" library="keywords">
+<arg>1233551478</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>checkPhoneSession</arg>
+<arg>${COMMON.base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210921 13:37:27.852" level="INFO">Creating Session using : alias=checkPhoneSession, url=http://localhost:6969/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210921 13:37:27.852" endtime="20210921 13:37:27.853"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>phone=${phone_number}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210921 13:37:27.853" level="INFO">${body} = {'phone': '1233551478'}</msg>
+<status status="PASS" starttime="20210921 13:37:27.853" endtime="20210921 13:37:27.853"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210921 13:37:27.853" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210921 13:37:27.853" endtime="20210921 13:37:27.853"/>
+</kw>
+<kw name="Post On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>checkPhoneSession</arg>
+<arg>/v1/phone/check</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20210921 13:37:27.860" level="INFO">POST Request : url=http://localhost:6969/customer/v1/phone/check 
+ path_url=/customer/v1/phone/check 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '23'} 
+ body=b'{"phone": "1233551478"}' 
+ </msg>
+<msg timestamp="20210921 13:37:27.860" level="INFO">POST Response : url=http://localhost:6969/customer/v1/phone/check 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Tue, 21 Sep 2021 06:37:27 GMT', 'Transfer-Encoding': 'chunked'} 
+ body={
+    "type": "not match"
+} 
+ </msg>
+<msg timestamp="20210921 13:37:27.860" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210921 13:37:27.853" endtime="20210921 13:37:27.860"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210921 13:37:27.861" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 13:37:27.860" endtime="20210921 13:37:27.861"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210921 13:37:27.862" level="INFO">${res_body} = {
+    "type": "not match"
+}</msg>
+<status status="PASS" starttime="20210921 13:37:27.861" endtime="20210921 13:37:27.862"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20210921 13:37:27.862" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20210921 13:37:27.862" endtime="20210921 13:37:27.862"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${res_body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20210921 13:37:27.862" level="INFO">${res_body} = {
+    "type": "not match"
+}</msg>
+<status status="PASS" starttime="20210921 13:37:27.862" endtime="20210921 13:37:27.862"/>
+</kw>
+<status status="PASS" starttime="20210921 13:37:27.851" endtime="20210921 13:37:27.863"/>
+</kw>
+<status status="PASS" starttime="20210921 13:37:27.851" endtime="20210921 13:37:27.863"/>
+</test>
+<status status="PASS" starttime="20210921 13:37:27.717" endtime="20210921 13:37:27.864"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="CheckPhoneNumber">CheckPhoneNumber</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="CheckPhoneNumber">CheckPhoneNumber</stat>
 </suite>
 </statistics>
 <errors>
